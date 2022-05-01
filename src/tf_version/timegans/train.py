@@ -6,7 +6,7 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Sklearn related import 
+# Sklearn related import
 import sklearn
 from sklearn.preprocessing import MinMaxScaler
 
@@ -17,5 +17,3 @@ from tensorflow.keras.layers import GRU, Dense, RNN, GRUCell, Input
 from tensorflow.keras.losses import BinaryCrossentropy, MeanSquaredError
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import plot_model
-
-

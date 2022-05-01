@@ -6,7 +6,7 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Sklearn related import 
+# Sklearn related import
 import sklearn
 from sklearn.preprocessing import MinMaxScaler
 
@@ -22,22 +22,24 @@ from tensorflow.keras.utils import plot_model
 hidden_dim = 24
 num_layers = 3
 
-# Logger 
-results_path = Path('results')
-log_dir = results_path / f'experiment_{0:02}'
+# Logger
+results_path = Path("results")
+log_dir = results_path / f"experiment_{0:02}"
 writer = tf.summary.create_file_writer(log_dir.as_posix())
 
-def get_input_placeholders(dataset='batadal'):
+
+def get_input_placeholders(dataset="batadal"):
     seq_len = 24
-    if dataset=='batadal':
-        n_seq = 26        
+    if dataset == "batadal":
+        n_seq = 26
         X = Input(shape=[seq_len, n_seq], name="RealData")
-        Z = Input(shape=[seq_len, n_seq], name='RandomData')
-    elif dataset=='swat':
-        n_seq = 18        
+        Z = Input(shape=[seq_len, n_seq], name="RandomData")
+    elif dataset == "swat":
+        n_seq = 18
         X = Input(shape=[seq_len, n_seq], name="RealData")
-        Z = Input(shape=[seq_len, n_seq], name='RandomData')
-        
+        Z = Input(shape=[seq_len, n_seq], name="RandomData")
+
+
 def make_rnn(n_layers, hidden_units, output_units, name):
     """Build RNN Block Generator
 
@@ -50,10 +52,11 @@ def make_rnn(n_layers, hidden_units, output_units, name):
     Returns:
         _type_: _description_
     """
-    return Sequential([GRU(units=hidden_units,
-                          return_sequences=True,
-                          name=f'GRU_{i + 1}') for i in range(n_layers)] + 
-                      [Dense(units=output_units,
-                             activation='sigmoid',
-                             name='OUT')], name=name)
-    
+    return Sequential(
+        [
+            GRU(units=hidden_units, return_sequences=True, name=f"GRU_{i + 1}")
+            for i in range(n_layers)
+        ]
+        + [Dense(units=output_units, activation="sigmoid", name="OUT")],
+        name=name,
+    )
