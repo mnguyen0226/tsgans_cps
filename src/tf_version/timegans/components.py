@@ -30,6 +30,8 @@ writer = tf.summary.create_file_writer(log_dir.as_posix())
 
 def get_input_placeholders(dataset="batadal"):
     seq_len = 24
+    X = None
+    Z = None
     if dataset == "batadal":
         n_seq = 26
         X = Input(shape=[seq_len, n_seq], name="RealData")
@@ -38,6 +40,10 @@ def get_input_placeholders(dataset="batadal"):
         n_seq = 18
         X = Input(shape=[seq_len, n_seq], name="RealData")
         Z = Input(shape=[seq_len, n_seq], name="RandomData")
+    else:
+        print("Please check your 'dataset' hyperparameter again.")
+        return
+    return X, Z
 
 
 def make_rnn(n_layers, hidden_units, output_units, name):

@@ -26,7 +26,6 @@ def preprocess_df(dataset="batadal"):
     # Batadal dataset
     if dataset == "batadal":
         df = pd.read_csv(path)
-        print(f"testing {df}")
 
         # Get only float values
         df = df[
@@ -138,9 +137,18 @@ def normalize_df(processed_df):
     return scaler, scaled_data
 
 
-def rolling_window(processed_df, scaled_data):
+def rolling_window(processed_df, scaled_data, dataset="batadal"):
     """Creates rolling window sequence and convert ts data to iid"""
     data = []
+    seq_len = None
+
+    if dataset == "batadal":
+        seq_len = 24
+    elif dataset == "swat":
+        seq_len = 18
+    else:
+        print("Please check your 'dataset' hyperparameter again.")
+        return
     for i in range(len(processed_df) - seq_len):
         data.append(scaled_data[i : i + seq_len])
     n_windows = len(data)
