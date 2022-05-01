@@ -103,3 +103,30 @@ def train_embedder(
     gradients = tape.gradient(e_loss, var_list)
     embedding_optimizer.apply_gradients(zip(gradients, var_list))
     return tf.sqrt(embedding_loss_t0)
+
+@tf.function
+def get_discriminator_loss(x, z, discriminator_model, adversarial_supervised, adversarial_emb, bce, gamma):
+    y_real = discriminator_model(x)
+    discriminator_loss_real = bce(y_true=tf.ones_like(y_real),
+                                  y_pred=y_real)
+
+    y_fake = adversarial_supervised(z)
+    discriminator_loss_fake = bce(y_true=tf.zeros_like(y_fake),
+                                  y_pred=y_fake)
+
+    y_fake_e = adversarial_emb(z)
+    discriminator_loss_fake_e = bce(y_true=tf.zeros_like(y_fake_e),
+                                    y_pred=y_fake_e)
+    return (discriminator_loss_real +
+            discriminator_loss_fake +
+            gamma * discriminator_loss_fake_e)
+    
+@tf.function
+def train_discriminator(x, z, discriminator, discriminator_optimizer):
+    with tf.GradientTape() as tape:
+        discriminator_loss = get_discriminator_loss(x, z)
+
+    var_list = discriminator.trainable_variables
+    gradients = tape.gradient(discriminator_loss, var_list)
+    discriminator_optimizer.apply_gradients(zip(gradients, var_list))
+    return discriminator_loss
