@@ -43,7 +43,7 @@ conda install typing-extensions
 - [BATADAL Dataset]()
 - [SWaT Dataset]()
 
-## Results
+## 4. Results
 
 ## 5. Report
 
