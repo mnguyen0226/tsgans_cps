@@ -45,6 +45,10 @@ conda install typing-extensions
 
 ## 4. Results
 
+![alt-text](https://github.com/mnguyen0226/tsgans_cps/blob/main/imgs/swat_visual.png)
+![alt-text](https://github.com/mnguyen0226/tsgans_cps/blob/main/imgs/batadal_visual.png)
+![alt-text](https://github.com/mnguyen0226/tsgans_cps/blob/main/imgs/sine_visual.png)
+
 ## 5. Report
 
 ## 6. References
