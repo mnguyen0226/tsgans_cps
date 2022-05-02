@@ -20,7 +20,7 @@ python 3.7.13
 numpy = 1.21.6
 tensorflow = 2.4.1
 matplotlib
-sklearn=1.0.2
+sklearn = 1.0.2
 pip install datagene
 pip install pystan
 pip install pydot
