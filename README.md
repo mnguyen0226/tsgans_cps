@@ -34,14 +34,14 @@ conda install typing-extensions
 ```
 
 **Training Notebooks:**
-- [Sine Wave]()
-- [BATADAL Dataset]()
-- [SWaT Dataset]()
+- [Sine Wave](https://github.com/mnguyen0226/tsgans_cps/blob/main/src/tf_version/notebooks/time_gans/time_gan_sine_wave.ipynb)
+- [BATADAL Dataset](https://github.com/mnguyen0226/tsgans_cps/blob/main/src/tf_version/notebooks/time_gans/time_gan_batadal.ipynb)
+- [SWaT Dataset](https://github.com/mnguyen0226/tsgans_cps/blob/main/src/tf_version/notebooks/time_gans/time_gan_swat.ipynb)
 
 **Evaluating Notebooks:**
-- [Sine Wave]()
-- [BATADAL Dataset]()
-- [SWaT Dataset]()
+- [Sine Wave](https://github.com/mnguyen0226/tsgans_cps/blob/main/src/tf_version/notebooks/evaluate/evaluate_synthetic_sine_wave.ipynb)
+- [BATADAL Dataset](https://github.com/mnguyen0226/tsgans_cps/blob/main/src/tf_version/notebooks/evaluate/evaluate_synthetic_batadal.ipynb)
+- [SWaT Dataset](https://github.com/mnguyen0226/tsgans_cps/blob/main/src/tf_version/notebooks/evaluate/evaluate_synthetic_swat.ipynb)
 
 ## 4. Results
 
@@ -50,6 +50,9 @@ conda install typing-extensions
 ![alt-text](https://github.com/mnguyen0226/tsgans_cps/blob/main/imgs/sine_visual.png)
 
 ## 5. Report
+
+[Presentation](https://github.com/mnguyen0226/tsgans_cps/blob/main/docs/presentation.pdf)
+[Report](https://github.com/mnguyen0226/tsgans_cps/blob/main/docs/report.pdf)
 
 ## 6. References
 Yoon, Jinsung, Daniel Jarrett, and Mihaela Van der Schaar. "Time-series generative adversarial networks." Advances in Neural Information Processing Systems 32 (2019).
