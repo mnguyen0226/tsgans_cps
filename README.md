@@ -52,6 +52,7 @@ conda install typing-extensions
 ## 5. Report
 
 [Presentation](https://github.com/mnguyen0226/tsgans_cps/blob/main/docs/presentation.pdf)
+
 [Report](https://github.com/mnguyen0226/tsgans_cps/blob/main/docs/report.pdf)
 
 ## 6. References
