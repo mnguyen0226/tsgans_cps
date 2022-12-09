@@ -1,7 +1,7 @@
 # Time-Series Generative Adversarial Networks for Cyber-Physical Systems
 
 ## 1. About
-Open-source Cyber-Physical Systems (CPS) dataset is rare, thus having a tool that can generate quality (temporal-preserved) synthetic dataset is needed. TimeGAN is a tool that can generate temporal-preserve dataset. This repository will apply TimeGAN towards two multivariate time-series cyber-physical systems, BATADAL and SWaT, using Tensorflow and PyTorch.
+Open-source Cyber-Physical Systems (CPS) dataset is rare, thus having a tool that can generate quality (temporal-preserved) synthetic dataset is needed. TimeGAN is a tool that can generate temporal-preserve dataset. This repository will apply TimeGAN towards two multivariate time-series cyber-physical systems, BATADAL and SWaT, using Tensorflow.
 
 ## 2. Explanation
 TimeGAN contains four components: Embedding function, Recovery function, Generator and Discriminator. There are three training phases of TimeGAN
